@@ -9,6 +9,7 @@
 }
 
 
+
 h1{
   font-weight: 100;
   font-family: 'Headliner';
@@ -258,9 +259,10 @@ h1{
         background-color: #0c3b84;
         border-radius: 0;
         border:0;
+        width:20%;
         font-family: 'Industry';
         color:#517fc6;
-        font-size: 1em;
+        font-size: 0.7em;
         
 
         &:nth-of-type(1){
@@ -359,32 +361,211 @@ h1{
 
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width:320px) and (max-width:780px) {
+  html{
+    font-size: 3vw;
   }
-}
+  .app{
+    &-nav{
+      background-image: url('./assets/images/navbar_mobile.png');
+      width:100%;
+      height:10vh;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      &-logo{
+        width:60%;
+        height:100%;
+      }
+      button{
+        background: initial;
+        border:0;
+        width:40%;
+        height:100%;
+        display: flex;
+        justify-content: flex-end;
+        &:focus{
+          outline: none;
+        }
+      }
+      &-menu{
+        width: 25%;
+        height:50%;
+        padding: 5%;
+      }
+    }
+    .home{
+      height:100vh;
+      width:100%;
+  
+      &-banner{
+        background-image: url('./assets/images/banner_mobile.png');
+        flex-direction: column;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+        &-middle_section{
+          width:100%;
+          height:70%;
+        }
+        &-character_container{
+          z-index: 1;
+        }
+        
+        &-character{
+          width:100%;
+          height:80%;
+          z-index: 1;
+        }
 
-.App-link {
-  color: #61dafb;
-}
+        &-logo_container{
+          width:100%;
+          height:20%;
+          z-index: 2;
+        }
+        &-logo{
+          width: 50%;
+          height:100%
+        }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+        &-intro_container{
+          width: 100%;
+          height: 30%;
+          justify-content: center;
+          align-items: center ;
+          text-align: center;
+          z-index: 3;
+        }
+  
+        &-intro_text{
+          font-size: 0.9em;
+        }
+      }
+      
+    }
+    .about{
+      background-image: url('./assets/images/tournament_mobile.png');
+  
+      &-header{
+        padding-bottom: 0;
+        padding-top: 15%;
+        text-align: center;
+        height:10%;
+        font-size: 3.2em;
+      }
+  
+      &-mini_header{
+        height:10%;
+        font-size: 1em;
+      }
+  
+      &-infolist{
+        padding: 0 4%;
+        height: 80%;
+        li{
+          padding:0.2% 4% 0 4%;
+        }
+      }
+    }
+    .register{
+      background-image: url('./assets/images/registration_mobile.png');
+      
+      &-image_container{
+        width:38%;
+        z-index: 1;
+      }
+  
+      &-image{
+        width:100%;
+        height:90%;
+      }
+      &-image:nth-of-type(1){
+        z-index: 2;
+      }
+  
+      &-image:nth-of-type(2){
+        z-index: 1;
+        transform: translateX(-90px);
+      }
+  
+      &-form_container{
+        width:62%;
+        padding-left: 5%;
+        padding-top: 4%;
+        height: 90%;
+        justify-content: flex-end;
+        z-index: 1;
+        h1{
+          margin:4% 0 10% 0;
+        }
+      }
+      &-form{
+        &>*{
+          height:7%;
+        }
+        label{
+          height: 11%;
+        }
+        
+        &>button{
+          height: 11%;
+        }
+
+        .textfield{
+          width:80%;
+          font-size: 1em;
+          padding-top: 10px;
+          margin-bottom: 0;
+
+          &::placeholder{
+            color:#517fc6;
+            padding-top: 5px;
+          }
+          &:nth-child(1){
+            width:61%;
+            height: 70%;
+          }
+          &:focus{
+            outline: none;
+          }
+          
+         
+        }
+        &-inputrow{
+          width:100%;
+          align-items: flex-end;
+
+         &:nth-child(1){
+           margin-bottom: 5%;
+         }
+        }
+        &-button{
+          margin:0% 0 0% 2%;
+          width:30%;
+  
+          &:nth-of-type(1){
+            margin-left: 0;
+            width:30%;
+          }
+        }
+        
+        .container {
+          display: flex;
+          align-items: center;
+          padding-left: 8%;
+          font-size: 1em;
+        }
+        
+        .checkmark {
+          top: 40%;
+          height: 20%;
+          width: 5%;
+        }
+      }
+  
+      .footer{
+        top:88%;
+        z-index: 2;
+       
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
-  }
+
 }
