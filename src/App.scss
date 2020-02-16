@@ -1,0 +1,390 @@
+@font-face {
+  font-family: 'Headliner';
+  src: url('./assets/fonts/headliner.TTF') ;
+}
+
+@font-face {
+  font-family: 'Industry';
+  src: url('./assets/fonts/industry.TTF') ;
+}
+
+
+h1{
+  font-weight: 100;
+  font-family: 'Headliner';
+  font-size: 3.5em;
+  margin: 0;
+}
+
+.app {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+  &-nav{
+    width:100%;
+    height:10vh;
+    background-image: url('./assets/images/navbar.png');
+    display: flex;
+    flex-direction: row;
+    font-family:'Industry';
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    transition: top 0.3s;
+
+    &-logo {
+      height:100%;
+      width:15%
+    }
+  
+    &-menu{
+      width: 85%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    a{
+      padding: 5% 3%;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .home{
+    height:100vh;
+    width:100%;
+
+    &-banner{
+      height: 100%;
+      width: 100%;
+      background-image: url('./assets/images/banner.png');
+      background-size: 100% 100%;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      &-logo_container{
+        width:30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-logo{
+        width:70%;
+        height:30%;
+      }
+
+      &-middle_section{
+        width:40%;
+        height:100%;
+      }
+      &-character_container{
+        width:100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+      }
+      
+      &-character{
+        width:100%;
+        height:90%;
+      }
+
+      &-intro_container{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center ;
+        text-align: left;
+      }
+
+      &-intro_header{
+        color: white;
+        width: 50%;
+      }
+
+      &-intro_text{
+        color: white;
+        font-size: 1em;
+        margin:0;
+        width: 80%;
+      }
+    }
+
+  }
+  
+  .about{
+    width:100%;
+    height:100vh;
+    background-image: url('./assets/images/tournament.png');
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    &-header{
+      color:#042e6f;
+      padding-bottom: 4%;
+    }
+
+    &-mini_header{
+      padding:1% 4%;
+      color: #042e6f;
+    }
+
+    &-infolist{
+      padding: 1% 1% 0 1%;
+
+      li{
+        padding:0.2% 2% 0 2%;
+        margin:0 6%;
+        color:#042e6f;
+
+        h3{
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  .register{
+    width:100%;
+    height:100vh;
+    background-image: url('./assets/images/registration.png');
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    position: relative;
+
+    &-image_container{
+      width:40%;
+      height:100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    &-image{
+      width:50%;
+      height:90%;
+
+      
+    }
+    &-image:nth-of-type(1){
+      z-index: 2;
+    }
+
+    &-image:nth-of-type(2){
+      z-index: 1;
+      transform: translateX(-90px);
+    }
+
+    &-form_container{
+      width:57%;
+      height:100%;
+      // padding-top: 2%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      h1{
+        color: white;
+        height:5%;
+        margin:4% 0 3% 0;
+      }
+    }
+    &-form{
+      height:80%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      &>*{
+        height: 11%;
+      }
+      .textfield{
+        background-color: #032E6F;
+        // height:20px;
+        width:67%;
+        border:0;
+        border-bottom: 1px solid #517fc6;
+        color:white;
+        font-family: 'Industry';
+        font-size: 24px;
+        padding-bottom:1.5%;
+        margin:1.5% 2% 5% 0;
+        &::placeholder{
+          color:#517fc6
+        }
+        &:nth-child(1){
+          width:43%;
+        }
+        &:focus{
+          outline: none;
+        }
+        
+       
+      }
+      &-inputrow{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      &-button{
+        margin:0 0 4% 2%;
+        padding:1.5% 4%;
+        background-color: #0c3b84;
+        border-radius: 0;
+        border:0;
+        font-family: 'Industry';
+        color:#517fc6;
+        font-size: 1em;
+        
+
+        &:nth-of-type(1){
+          margin-left: 0;
+        }
+      }
+      
+      .textfield:active{
+        border:0;
+      }
+
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 5%;
+        // margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-family: 'Industry';
+        color: #517fc6;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #fff;
+      }
+      
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+      
+      /* When the checkbox is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #22BEEF;
+      }
+      
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+      
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+      
+
+      #submit{
+        background-color: white;
+        color: #042e6f;
+        height:7%;
+        margin-top: 2%;
+        width:25%;
+      }
+    }
+
+    .footer{
+      position: absolute;
+      top: 92.2%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 30vh;
+
+      &-img{
+        width:100%;
+        height: 100%;
+
+      }
+    }
+  }
+  
+}
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
