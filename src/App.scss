@@ -17,6 +17,15 @@ h1{
   margin: 0;
 }
 
+.loader{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .app {
   text-align: center;
   width: 100%;
@@ -224,6 +233,9 @@ h1{
       text-align: left;
       &>*{
         height: 11%;
+      }
+      p{
+        margin: 0;
       }
       .textfield{
         background-color: #032E6F;
