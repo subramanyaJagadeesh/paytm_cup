@@ -13,7 +13,7 @@ import footer from './assets/images/footer.png';
 import loader from './assets/images/loader.svg'
 import './App.scss';
 import axios from 'axios';
-
+import VisibilitySensor from 'react-visibility-sensor'
 
 let width = window.innerWidth;
 
@@ -201,7 +201,8 @@ function App() {
           }
           
         </div>
-          <div  id="home" className="home">
+        <VisibilitySensor minTopValue={20} partialVisibility='top' onChange={(isVisible)=>{if(isVisible)setView('home')}}>
+          <div  id="home" className="home" >
             <div className="home-banner">
               {
                 !desktop?
@@ -212,7 +213,7 @@ function App() {
                 <img src={desktop?banner_logo:banner_logo_mobile} className="home-banner-logo"/>
               </div>
               <div className="home-banner-character_container">
-                <img src={desktop?banner_character:banner_character_mobile} className="home-banner-character"/>
+                <img src={desktop?banner_character:banner_character_mobile} id='char2' className="home-banner-character"/>
               </div>
               {
                 desktop?
@@ -229,54 +230,57 @@ function App() {
               </div>
             </div>
           </div>
+        </VisibilitySensor>
+        <VisibilitySensor minTopValue={50} partialVisibility='top' onChange={(isVisible)=>{if(isVisible)setView('details')}}>
+          <div id="info"  className="about">
+            <h1  className="about-header">
+              ABOUT THE TOURNAMENT
+            </h1>
+            <h3 className="about-mini_header">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+            </h3>
+            <ul className="about-infolist">
+              <li>
+                <h3>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </h3>
+              </li>
+              <li>
+                <h3>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </h3>
+              </li>
+              <li>
+                <h3>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </h3>
+              </li>
+              <li>
+                <h3>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </h3>
+              </li>
+              <li>
+                <h3>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </h3>
+              </li>
+              
+            </ul>
+          </div>
+        </VisibilitySensor>
         
-        <div id="info"  className="about">
-          <h1  className="about-header">
-            ABOUT THE TOURNAMENT
-          </h1>
-          <h3 className="about-mini_header">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-          </h3>
-          <ul className="about-infolist">
-            <li>
-              <h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-              </h3>
-            </li>
-            <li>
-              <h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-              </h3>
-            </li>
-            <li>
-              <h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-              </h3>
-            </li>
-            <li>
-              <h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-              </h3>
-            </li>
-            <li>
-              <h3>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-              </h3>
-            </li>
-            
-          </ul>
-        </div>
-
+        <VisibilitySensor minTopValue={100} partialVisibility='top' onChange={(isVisible)=>{if(isVisible)setView('register')}}>
         <div id="register" className="register">
           <div className="register-image_container">
             {
               desktop?
               <>
-                <img className="register-image" src={character_1} />
-                <img className="register-image" src={character_2} />
+                <img className="register-image" id={view=='register'?"char1":""} src={character_1} />
+                <img className="register-image" id={view=='register'?"char2":""} src={character_2} />
               </>
               :
-                <img className="register-image" src={register_character} />
+                <img className="register-image" id={view=='register'?"char1":""} src={register_character} />
             }
           
           </div>
@@ -359,7 +363,6 @@ function App() {
                   <p style={{color:'red',fontSize:'1em',}}>Form has missing/ innacurate values, please check and retry.</p>
                   :null
                 }
-
                 <label className="container">TERMS & CONDITIONS
                   <input value={check} onChange={(e)=>setCheck(e.target.value)} type="checkbox" id="checkbox"/>
                   <span className="checkmark"></span>
@@ -371,6 +374,7 @@ function App() {
             <img src={footer} className="footer-img" />
           </div>
         </div>
+        </VisibilitySensor>
       </div>
     }
     </>
